@@ -1,0 +1,44 @@
+id: Integer (Immutable)
+The id field is typically considered immutable since it serves as a unique identifier for the product and should not change once assigned.
+
+name: String (Mutable)
+The name field could be mutable. Product names might change due to rebranding, marketing decisions, or updates to the product itself.
+
+description: String (Mutable)
+Similarly to the name, the description field could be mutable. Product descriptions might change to reflect updates or improvements to the product.
+
+ean: String (Immutable)(8 to 13 digit)
+The ean field, representing the European Article Number, is typically considered immutable. EANs are standardized identifiers for manufacturer retail productand should not change once assigned.
+
+upc: String (Immutable) (12 digits)
+Similar to the EAN, the upc field representing the Universal Product Code is typically considered immutable.
+
+image: String (Mutable)
+The image field might be mutable. While the main product image might remain the same for consistency, there could be cases where it's updated or replaced.
+
+images: List of Objects (Mutable)
+The images field, representing additional images associated with the product, is likely mutable. Additional images might be added or removed over time.
+
+title: String (Mutable)
+The title field within the images objects might be mutable, as titles of images could change.
+
+description: String (Mutable)
+Similarly, the description field within the images objects might be mutable, as descriptions of images could change.
+
+url: String (Mutable)
+The url field within the images objects might be mutable. URLs could change if images are hosted on different servers or if the structure of the website changes.
+
+net_price: Float (Mutable)
+The net_price field could be mutable. Prices might change due to factors such as changes in production costs or pricing strategies.
+
+taxes: String (Mutable)
+The taxes field could be mutable if tax rates change over time.
+
+price: String (Mutable)
+The price field could be mutable. Prices might change due to factors such as changes in production costs or pricing strategies.
+
+categories: List of Integers (Mutable)
+The categories field is likely mutable. Products might be assigned to different categories or have categories added or removed over time.
+
+tags: List of Strings (Mutable)
+The tags field is mutable. Tags associated with products might change to reflect updates or changes in the product's characteristics or features.

@@ -1,0 +1,11 @@
+CREATE STORAGE INTEGRATION PRODUCT_STAGE_INT -- create storage integration with gcs
+TYPE = EXTERNAL_STAGE
+STORAGE_PROVIDER = 'GCS'
+ENABLED = TRUE
+STORAGE_ALLOWED_LOCATIONS = ('gcs://gcs-bucket-name');
+
+
+CREATE OR REPLACE STAGE PRODUCT_DB.DW_APPL.PRODUCT_STAGE -- create external stage for staging product csv
+URL = 'gcs://gcs-bucket-name'
+STORAGE_INTEGRATION = PRODUCT_STAGE_INT
+FILE_FORMAT = (TYPE = CSV SKIP_HEADER = 1);

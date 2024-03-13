@@ -1,0 +1,36 @@
+CREATE OR REPLACE VIEW PRODUCT_DB.DW_VIEWS.PRODUCTS_VW(  -- Views
+    PRODUCT_ID COMMENT 'Unique identifier for each product',
+    PRODUCT_NAME COMMENT 'Name or title of the product',
+    PRODUCT_DESCRIPTION COMMENT 'Description or additional details about the product',
+    PRODUCT_EAN COMMENT 'European Article Number (EAN) barcode for the product used in retail and supply chain management systems for inventory tracking and management', 
+    PRODUCT_UPC COMMENT 'Universal Product Code (UPC) barcode for the product used for product identification and inventory management similar to EAN', 
+    NET_PRICE COMMENT 'Price of the product before taxes', 
+    TAXES COMMENT 'Taxes applied to the product net price',
+    PRICE_INC_TAX COMMENT 'Total price of the product including taxes',
+    CREATED_TS COMMENT 'Record creation timestamp in source',
+    DW_CREATE_TS COMMENT 'Records the date and time when the record was created in the data warehouse',
+    DW_LAST_UPDATE_TS COMMENT 'Records the date and time when the record was last updated in the data warehouse',
+    DW_SOURCE_NM COMMENT 'Data source or system from which the record originated',
+    DW_FIRST_EFFECTIVE_DT COMMENT 'Represents the first date when the record is considered effective or valid',
+    DW_LAST_EFFECTIVE_DT COMMENT 'Represents the last date when the record is considered effective or valid',
+    DW_CURRENT_VERSION_IND COMMENT 'Indicates whether the record is the current version or the latest revision',
+    DW_LOGICAL_DELETE_IND COMMENT 'Indicates whether the record has been logically deleted or marked as inactive'
+) as
+SELECT 
+    PRODUCT_ID,
+    PRODUCT_NAME,
+    PRODUCT_DESCRIPTION,
+    PRODUCT_EAN, 
+    PRODUCT_UPC, 
+    NET_PRICE, 
+    TAXES,
+    PRICE_INC_TAX,
+    CREATED_TS,
+    DW_CREATE_TS,
+    DW_LAST_UPDATE_TS,
+    DW_SOURCE_NM,
+    DW_FIRST_EFFECTIVE_DT,
+    DW_LAST_EFFECTIVE_DT,
+    DW_CURRENT_VERSION_IND,
+    DW_LOGICAL_DELETE_IND
+FROM PRODUCT_DB.DW_C_PRODUCT.PRODUCTS;
